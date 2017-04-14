@@ -121,7 +121,6 @@ public abstract class AbstractModel<T> {
                 .append(fieldname)
                 .append(" LIKE :")
                 .append(fieldname).toString();
-        LOG.info(sql);
         return getEntityManager().createQuery(
                 sql)
                 .setParameter(fieldname, value)
