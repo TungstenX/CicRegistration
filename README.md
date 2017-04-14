@@ -22,26 +22,26 @@ The specific technologies involved are:
 I use my trusty Netbeans 8.2 on Ubuntu 16.04. I developed the solution against Wildfly 10.1.0. 
 
 ## Assumptions
-(Actaully only one)
+(Actually only one)
 - Only one email per email address will be loaded, e.g. one invoice for a specific person. Thus no bulk emails to be loaded.
 
 ## Time allocation
-The following is my time allocated to this procject:
+The following is my time allocated to this project:
 - 10 minutes: Download and install Wildfly 10.1.0 on Ubuntu 16.04 (64 bit) 
 - 2.5 hours: Coding the solution
 - 1 hour: Fighting with Netbeans, Wildfly and H2 to get solution to run - [Machine 0 : Rage Against 3]
 - 10 minutes: Download and install Ready! API 1.9.0 (Yip, you guess it, on Ubuntu 16.04 (64 bit))
 - 1 minute: Test web services
-- 2.5 hours: Fighting JUnit to run in a test conainer - [Machine 1 : Rage Against 0] (Left my futile efforts in the files as comments)
-- 30 mintues: Packaging and prettying up everything
+- 2.5 hours: Fighting JUnit to run in a test container - [Machine 1 : Rage Against 0] (Left my futile efforts in the files as comments)
+- 30 minutes: Packaging and prettying up everything
 
 # WSDL
-After deploying the wsdl can be found at http://localhost:8080/CicRegistration-0.0.0/CicRegistrationEngine/CicRegistrationEngine?wsdl
+After deploying, the wsdl can be found at http://localhost:8080/CicRegistration-0.0.0/CicRegistrationEngine/CicRegistrationEngine?wsdl
 
 (Port depending on your Wildfly set up)
 
 ## Thanks
-It is an honour to have build this demonstration for you to evaluate
+It was an honour to have built this demonstration for you to evaluate
 
 ### Powered by
 This README.md was made using VIM
