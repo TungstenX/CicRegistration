@@ -8,8 +8,14 @@ import javax.ejb.Stateless;
 import za.co.pas.proof.cicregistration.controller.CicService;
 
 /**
+ * The interface layer, aka the web services.<p>
+ * It contains two entry points<p>
+ * <ul>
+ * <li>registerCic - Fully implemented</li>
+ * <li>registerCicInfo - Not implemented</li>
+ * </ul>
  *
- * @author andre
+ * @author Andre Labuschagne
  */
 @WebService(serviceName = "CicRegistrationEngine")
 @Stateless
@@ -40,9 +46,9 @@ public class CicRegistrationEngine {
     }
 
     /**
-     * Stubby!
-     * @param txt
-     * @return 
+     * Stubby! Not implemented 
+     *
+     * @return an awkward string
      */
     @WebMethod(operationName = "RegisterCicInfo")
     public String registerCicInfo() {

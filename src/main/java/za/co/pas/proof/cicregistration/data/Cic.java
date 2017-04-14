@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package za.co.pas.proof.cicregistration.data;
 
 import java.io.Serializable;
@@ -29,8 +24,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
+ * Auto gen entity; here is how I cheated:
+ * <p>
+ * <ul>
+ * <li>Create tables in MySql according to specified UML</li>
+ * <li>Use Netbeans to create entities using database tables</li>
+ * <li>Hack persistence.xml to create tables in H2</li>
+ * <li>Ta-da!</li>
+ * </ul>
  *
- * @author andre
+ * @author Andre Labuschange
  */
 @Entity
 @Table(name = "cic")
@@ -167,5 +170,5 @@ public class Cic implements Serializable {
     public String toString() {
         return "za.co.pas.proof.cicregistration.data.Cic[ cicid=" + cicid + " ]";
     }
-    
+
 }

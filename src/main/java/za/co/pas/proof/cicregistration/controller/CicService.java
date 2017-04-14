@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package za.co.pas.proof.cicregistration.controller;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,8 +13,9 @@ import za.co.pas.proof.cicregistration.model.CicModel;
 import za.co.pas.proof.cicregistration.model.EntityModel;
 
 /**
+ * The service layer for the only implemented interface method; registerCic
  *
- * @author andre
+ * @author Andre Labuschagne
  */
 @Stateless
 @LocalBean
@@ -49,17 +44,23 @@ public class CicService implements CicServiceinterface {
     public boolean registerCic(String cicType, String subject, String body,
             String sourceSystem, String name, String email) {
         try {
-            List<Entity> entities = entityModel.findFieldWithValue("email", email);
+            List<Entity> entities = entityModel.findFieldWithValue(EMAIL_ADDRESS, email);
             Entity entity;
             if (entities.isEmpty()) {
                 //then we don't have this entity yet
+                LOG.debug("Email Entity doesn't exist yet, creating");
                 entity = new Entity();
                 entity.setEmailAddress(email);
                 entity.setEntityName(name);
                 entityModel.create(entity);
+            } else if (entities.size() == 1) {
+                LOG.debug("Email Entity exist");
+                entity = entities.get(0);
             } else {
+                LOG.warn("Email Entity exist: more than one, use first one, this may be an issue but this condition was not specified");
                 entity = entities.get(0);
             }
+            LOG.debug("Creating new Cic");
             Cic cic = new Cic();
             cic.setBody(body);
             cic.setCicTimestamp(new Date());
@@ -73,8 +74,9 @@ public class CicService implements CicServiceinterface {
                 entity.setCicCollection(new LinkedList<Cic>());
             }
             entity.getCicCollection().add(cic);
+            LOG.info("Updating email entity");
             entityModel.edit(entity);
-
+            //Whoot whoot! It worked!
             return true;
         } catch (Exception e) {
             //Pokemon exception handling!
@@ -82,5 +84,4 @@ public class CicService implements CicServiceinterface {
             return false;
         }
     }
-
 }
