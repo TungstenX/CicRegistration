@@ -46,6 +46,6 @@ It is an honour to have build this demonstration for you to evaluate
 ### Powered by
 This README.md was made using VIM
 
-[![Andr&#233; Labuschagn&#233](http://gravatar.com/avatar/88ebc726d33c8ddba2534d1d6f93e638?s=144)](https://www.ParanoidAndroid.co.za) |
+[![Andr&#233; Labuschagn&#233;](http://gravatar.com/avatar/88ebc726d33c8ddba2534d1d6f93e638?s=144)](https://www.ParanoidAndroid.co.za) |
 ---|
-[Andr&#233; Labuschagn&#233](https://www.ParanoidAndroid.co.za) | 
+[Andr&#233; Labuschagn&#233;](https://www.ParanoidAndroid.co.za) | 
